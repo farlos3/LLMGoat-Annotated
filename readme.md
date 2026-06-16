@@ -26,9 +26,9 @@
 
 ## What is LLMGoat?
 
-LLMGoat is a **gamified, hands-on exploitation environment** for learning offensive LLM security. As LLMs get rapidly adopted in production, developers and security teams often underestimate attack surfaces unique to these models — prompt injection, data poisoning, system prompt leakage, and more.
+LLMGoat is a **gamified, hands-on exploitation environment** for learning offensive LLM security. As LLMs get rapidly adopted in production, developers and security teams often underestimate attack surfaces unique to these models, including prompt injection, data poisoning, system prompt leakage, and more.
 
-LLMGoat lets you **safely exploit, observe, and measure** the impact of these attacks in realistic scenarios — so you understand the risks before they hit production.
+LLMGoat lets you **safely exploit, observe, and measure** the impact of these attacks in realistic scenarios, so you understand the risks before they hit production.
 
 > **10 core challenges**, each mapped directly to the [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
 

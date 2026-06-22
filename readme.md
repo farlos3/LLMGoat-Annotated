@@ -2,7 +2,7 @@
   <img src="./assets/logo_llmgoat.png" alt="LLMGoat Logo" width="200"/>
 
   <h1>LLMGoat</h1>
-  <p><strong>Offensive LLM Security — Learn by Exploiting</strong></p>
+  <p><strong>Offensive LLM Security Environment: Learn by Exploiting</strong></p>
 
   <p>
     <img src="https://img.shields.io/badge/OWASP-LLM%20Top%2010-red?style=flat-square" alt="OWASP LLM Top 10"/>

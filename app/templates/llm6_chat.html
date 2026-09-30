@@ -39,7 +39,7 @@
     }
 
     .page-header {
-      width: 100%; max-width: 1200px;
+      width: 100%; max-width: 1500px;
       padding: 20px 20px 0;
       text-align: center;
       z-index: 1;
@@ -51,15 +51,18 @@
       margin: 0 0 4px;
     }
 
-    /* ── two-column layout ── */
+    /* ── three-column layout: brief | chat | tools ── */
     .workspace {
       display: flex;
       gap: 16px;
-      width: 100%; max-width: 1200px;
+      width: 100%; max-width: 1500px;
       padding: 16px 20px;
       z-index: 1;
       flex: 1;
     }
+
+    /* ── mission brief: same height as the chat panel ── */
+    .brief-panel { height: 600px; }
 
     /* ── chat panel ── */
     .chat-panel {
@@ -219,6 +222,8 @@
   </div>
 
   <div class="workspace">
+    {% include "_brief_panel.html" %}
+
     <!-- ── Chat Panel ── -->
     <div class="chat-panel">
       <div id="chat-box"></div>

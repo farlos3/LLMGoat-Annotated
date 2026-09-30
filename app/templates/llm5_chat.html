@@ -206,13 +206,17 @@
     <h2>{{ challenge.title }}</h2>
   </div>
 
-  <div class="chat-container">
-    <div id="chat-box"></div>
+  <div class="chat-layout">
+    {% include "_brief_panel.html" %}
 
-    <div class="input-group">
-      <input type="text" id="user-input" placeholder="Describe the HTML content to generate...">
-      <button id="send-btn">Send</button>
-      <button id="restart-btn">Restart</button>
+    <div class="chat-container">
+      <div id="chat-box"></div>
+
+      <div class="input-group">
+        <input type="text" id="user-input" placeholder="Describe the HTML content to generate...">
+        <button id="send-btn">Send</button>
+        <button id="restart-btn">Restart</button>
+      </div>
     </div>
   </div>
 

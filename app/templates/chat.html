@@ -211,22 +211,26 @@
     <p class="challenge-desc"></p>
   </div>
 
-  <div class="chat-container">
-    <div id="chat-box"></div>
+  <div class="chat-layout">
+    {% include "_brief_panel.html" %}
 
-    <div class="input-group">
-      <input type="text" id="user-input" placeholder="Type your message...">
-      
-      <div class="file-upload">
-        <input type="file" id="file-input" accept=".txt,.pdf,.jpg,.jpeg,.png">
-        <label for="file-input">+</label>
+    <div class="chat-container">
+      <div id="chat-box"></div>
+
+      <div class="input-group">
+        <input type="text" id="user-input" placeholder="Type your message...">
+
+        <div class="file-upload">
+          <input type="file" id="file-input" accept=".txt,.pdf,.jpg,.jpeg,.png">
+          <label for="file-input">+</label>
+        </div>
+        <button id="send-btn">Send</button>
+        <button id="restart-btn">Restart</button>
       </div>
-      <button id="send-btn">Send</button>
-      <button id="restart-btn">Restart</button>
     </div>
   </div>
 
-  <a href="{{ url_for('challenge_page', id=challenge.id) }}" class="btn-back">⬅ Back to Challenge Page</a>
+  <a href="{{ url_for('challenge_page', id=challenge.id) }}" class="btn-back">Back to Challenge Page</a>
 
   <script>
     const chatBox = document.getElementById("chat-box");

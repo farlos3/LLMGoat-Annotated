@@ -16,11 +16,23 @@
   </a>
 
   <p>
-    <a href="https://www.youtube.com/watch?v=LFmyKLSi3aY">🎥 Watch Demo</a> •
     <a href="#-deployment-steps">🚀 Get Started</a> •
     <a href="#-owasp-llm-top-10-challenges">📋 Challenges</a>
   </p>
 </div>
+
+---
+
+## 📌 About This Repository
+
+This repository is a clone of the original **[LLMGoat](https://github.com/LiteshGhute/LLMGoat)** by [LiteshGhute](https://github.com/LiteshGhute), with minor modifications. The project structure and all challenge logic are unchanged.
+
+What's different from the original:
+
+- Each challenge shows a mission brief (scenario, objectives and an optional hint) on its landing page and in a side panel next to the chat.
+- Minor UI polish, such as aligned challenge cards, evenly sized chat input buttons and tighter spacing.
+
+All credit for the original project goes to its author.
 
 ---
 
@@ -36,9 +48,7 @@ LLMGoat lets you **safely exploit, observe, and measure** the impact of these at
 
 ---
 
-## 🎥 Demo
-
-[![LLMGoat Demo](https://img.shields.io/badge/YouTube-Watch%20Demo-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=LFmyKLSi3aY)
+## 📸 Screenshot
 
 ![LLMGoat Screenshot](./assets/asset1.png)
 

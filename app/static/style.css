@@ -90,6 +90,8 @@ h1 {
   width: 330px;
   box-shadow: 0 0 15px rgba(0, 255, 200, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -101,16 +103,28 @@ h1 {
   color: #00ffc8;
   font-size: 1.3em;
   text-shadow: 0 0 8px rgba(0, 255, 200, 0.5);
+  line-height: 1.3;
+  /* Reserve two lines so descriptions start at the same height across cards */
+  min-height: 2.6em;
 }
 
 .card-body {
   padding: 15px 20px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-body p {
   color: #c2c2c2;
   font-size: 0.9em;
   min-height: 60px;
+}
+
+/* Pin the button to the bottom so it lines up across cards in a row */
+.card-body .btn {
+  margin-top: auto;
+  align-self: center;
 }
 
 /* ======== BUTTON ======== */
@@ -142,4 +156,94 @@ footer {
   border-top: 1px solid #00ffc8;
   position: relative;
   z-index: 1;
+}
+
+/* ======== CHAT PAGES: INPUT ROW ======== */
+/* Match Send/Restart to the 42px message input and upload button */
+.input-group button {
+  height: 42px;
+  box-sizing: border-box;
+}
+
+/* ======== CHAT PAGES: MISSION BRIEF PANEL ======== */
+/* Single-chat pages: brief on the left, chat on the right */
+.chat-layout {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.chat-layout .chat-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.brief-panel {
+  flex: 0 0 280px;
+  box-sizing: border-box;
+  /* Take the row height from the chat panel and scroll if the brief is longer */
+  contain: size;
+  overflow-y: auto;
+  background: rgba(15, 17, 23, 0.95);
+  border: 1px solid rgba(0, 255, 200, 0.15);
+  border-radius: 15px;
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9em;
+  line-height: 1.55;
+  color: #c2c2c2;
+  text-align: left;
+}
+
+.brief-panel h3 {
+  color: #00ffc8;
+  font-size: 1.05em;
+  text-shadow: 0 0 6px rgba(0, 255, 200, 0.4);
+  margin: 0 0 10px;
+}
+
+.brief-panel p {
+  margin: 0 0 12px;
+}
+
+.brief-panel ol {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.brief-panel li {
+  margin-bottom: 8px;
+}
+
+.brief-panel details {
+  background: rgba(0, 255, 200, 0.05);
+  border: 1px solid rgba(0, 255, 200, 0.15);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.brief-panel summary {
+  color: #00ffc8;
+  cursor: pointer;
+}
+
+.brief-panel details p {
+  margin: 8px 0 0;
+}
+
+/* Not enough room for side-by-side: stack the brief above the chat */
+@media (max-width: 1280px) {
+  .workspace { flex-wrap: wrap; align-content: flex-start; }
+  .workspace > .brief-panel { flex-basis: 100%; height: auto; contain: none; }
+}
+
+@media (max-width: 900px) {
+  .chat-layout { flex-wrap: wrap; }
+  .chat-layout > .brief-panel { flex-basis: 100%; contain: none; }
 }

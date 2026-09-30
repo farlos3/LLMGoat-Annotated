@@ -33,7 +33,7 @@
     }
 
     .page-header {
-      width: 100%; max-width: 1260px;
+      width: 100%; max-width: 1560px;
       padding: 20px 20px 0; text-align: center; z-index: 1;
     }
     .page-header h2 {
@@ -43,9 +43,12 @@
 
     .workspace {
       display: flex; gap: 16px;
-      width: 100%; max-width: 1260px;
+      width: 100%; max-width: 1560px;
       padding: 16px 20px; z-index: 1; flex: 1;
     }
+
+    /* ── mission brief: same height as the chat panel ── */
+    .brief-panel { height: 640px; }
 
     /* ── Chat panel ── */
     .chat-panel {
@@ -193,6 +196,8 @@
   </div>
 
   <div class="workspace">
+    {% include "_brief_panel.html" %}
+
     <!-- Chat -->
     <div class="chat-panel">
       <div id="chat-box"></div>

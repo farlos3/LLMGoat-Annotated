@@ -61,9 +61,62 @@
       text-align: center;
     }
 
+    .brief {
+      width: 100%;
+      border-top: 1px solid rgba(0,255,204,0.15);
+      padding-top: 20px;
+    }
+
+    .brief h2 {
+      color: #00ffcc;
+      font-size: 1.1rem;
+      margin: 0 0 8px;
+    }
+
+    .brief p {
+      text-align: left;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .brief ol {
+      color: #ccc;
+      text-align: left;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+
+    .brief li {
+      margin-bottom: 6px;
+    }
+
+    .brief details {
+      background: rgba(0,255,204,0.05);
+      border: 1px solid rgba(0,255,204,0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .brief summary {
+      color: #00ffcc;
+      cursor: pointer;
+    }
+
+    .brief details p {
+      margin: 10px 0 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
     .btn {
       display: inline-block;
-      margin: 10px;
+      margin: 0;
       padding: 12px 25px;
       border-radius: 8px;
       text-decoration: none;
@@ -104,8 +157,31 @@
     <h1>{{ challenge.title }}</h1>
     <p>{{ challenge.description }}</p>
 
-    <a href="{{ url_for('start_challenge', id=challenge.id) }}" class="btn start">🚀 Start Challenge</a>
-    <a href="{{ url_for('home') }}" class="btn">⬅ Back to Challenges</a>
+    {% if challenge.brief %}
+    <div class="brief">
+      <h2>Scenario</h2>
+      <p>{{ challenge.brief.scenario }}</p>
+
+      <h2>Your Mission</h2>
+      <ol>
+        {% for objective in challenge.brief.objectives %}
+        <li>{{ objective }}</li>
+        {% endfor %}
+      </ol>
+
+      {% if challenge.brief.hint %}
+      <details>
+        <summary>Hint (click to reveal)</summary>
+        <p>{{ challenge.brief.hint }}</p>
+      </details>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="actions">
+      <a href="{{ url_for('start_challenge', id=challenge.id) }}" class="btn start"> Start Challenge</a>
+      <a href="{{ url_for('home') }}" class="btn">Back to Challenges</a>
+    </div>
   </div>
 
   <footer>

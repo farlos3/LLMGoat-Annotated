@@ -11,6 +11,7 @@ from llms.llm7 import main as llm7
 from llms.llm8 import main as llm8
 from llms.llm9 import main as llm9
 from llms.llm10 import main as llm10
+from briefs import BRIEFS
 
 app = Flask(__name__)
 
@@ -81,6 +82,9 @@ challenges = [
         "description": "Trigger resource exhaustion in an AI writing assistant with no response limits — watch the live budget meter drain to zero and receive a Resource Exhausted error."
     },
 ]
+
+for c in challenges:
+    c["brief"] = BRIEFS.get(c["id"])
 
 @app.route('/')
 def home():
